@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace VehicleTrackingApi.Controllers
+namespace IndexHRMSApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

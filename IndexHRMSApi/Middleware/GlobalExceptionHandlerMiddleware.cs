@@ -4,7 +4,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace VehicleTrackingApi.Middleware
+namespace IndexHRMSApi.Middleware
 {
     public class GlobalExceptionHandlerMiddleware
     {

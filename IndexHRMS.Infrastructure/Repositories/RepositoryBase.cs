@@ -5,11 +5,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Interfaces;
-using VehicleTracking.Entity.Entities;
-using VehicleTracking.Infrastructure.Context;
+using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Entity.Entities;
+using IndexHRMS.Infrastructure.Context;
 
-namespace VehicleTracking.Infrastructure.Repositories
+namespace IndexHRMS.Infrastructure.Repositories
 {
     public class RepositoryBase<T> : IAsyncRepository<T> where T : BaseEntity
     {

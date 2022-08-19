@@ -13,11 +13,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Helper;
-using VehicleTracking.Infrastructure.Helper;
-using VehicleTrackingApi.Middleware;
+using IndexHRMS.Application.Helper;
+using IndexHRMS.Infrastructure.Helper;
+using IndexHRMSApi.Middleware;
 
-namespace VehicleTrackingApi
+namespace IndexHRMSApi
 {
     public class Startup
     {

@@ -8,11 +8,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using VehicleTracking.Application.CommandQuery.Accounts.Command.CreateAccounts;
-using VehicleTracking.Application.Helper;
-using VehicleTracking.Application.Interfaces;
+using IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts;
+using IndexHRMS.Application.Helper;
+using IndexHRMS.Application.Interfaces;
 
-namespace VehicleTracking.Application.CommandQuery.Accounts.Queries.Login
+namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
 {
     public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {

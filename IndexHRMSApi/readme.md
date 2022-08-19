@@ -6,7 +6,7 @@
 
 #Setup Procedure: Need to restore the attach DB or run migration command to generate DB
 
-#Change appsettings (VehicleTrackingApi) Data Source to local server name, as well as user id & password
+#Change appsettings (IndexHRMSApi) Data Source to local server name, as well as user id & password
 
 #Need to register a user and login 
 

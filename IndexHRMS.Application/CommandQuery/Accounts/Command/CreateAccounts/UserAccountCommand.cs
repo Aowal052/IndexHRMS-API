@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Helper;
+using IndexHRMS.Application.Helper;
 
-namespace VehicleTracking.Application.CommandQuery.Accounts.Command.CreateAccounts
+namespace IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts
 {
     public record UserAccountCommand(
         string FirstName,

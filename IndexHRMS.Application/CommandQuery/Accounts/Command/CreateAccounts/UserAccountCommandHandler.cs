@@ -8,12 +8,12 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Enums;
-using VehicleTracking.Application.Helper;
-using VehicleTracking.Application.Interfaces;
-using VehicleTracking.Entity.Entities;
+using IndexHRMS.Application.Enums;
+using IndexHRMS.Application.Helper;
+using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Entity.Entities;
 
-namespace VehicleTracking.Application.CommandQuery.Accounts.Command.CreateAccounts
+namespace IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts
 {
     public class UserAccountCommandHandler : IRequestHandler<UserAccountCommand, Message>
     {

@@ -8,17 +8,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Interfaces;
-using VehicleTracking.Infrastructure.Context;
-using VehicleTracking.Infrastructure.Repositories;
+using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Infrastructure.Context;
+using IndexHRMS.Infrastructure.Repositories;
 
-namespace VehicleTracking.Infrastructure.Helper
+namespace IndexHRMS.Infrastructure.Helper
 {
     public static class InfrastructureRegistration
     {
         public static IServiceCollection AddInsfrastructureService(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"),
+                sqlServerOptionsAction: sqlOption =>
+                {
+                    sqlOption.EnableRetryOnFailure(
+                        maxRetryCount: 10,
+                        maxRetryDelay: TimeSpan.FromSeconds(4),
+                        errorNumbersToAdd: null
+                        );
+                }
+                ));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IAccountsRepository, AccountsRepository>();

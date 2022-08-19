@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Interfaces;
-using VehicleTracking.Entity.Entities;
-using VehicleTracking.Infrastructure.Context;
+using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Entity.Entities;
+using IndexHRMS.Infrastructure.Context;
 
-namespace VehicleTracking.Infrastructure.Repositories
+namespace IndexHRMS.Infrastructure.Repositories
 {
     public class AccountsRepository : RepositoryBase<User>, IAccountsRepository
     {

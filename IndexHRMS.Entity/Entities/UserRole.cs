@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTracking.Entity.Entities
+namespace IndexHRMS.Entity.Entities
 {
     public class UserRole : BaseEntity
     {

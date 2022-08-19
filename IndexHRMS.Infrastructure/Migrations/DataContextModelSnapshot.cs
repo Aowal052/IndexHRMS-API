@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VehicleTracking.Infrastructure.Context;
+using IndexHRMS.Infrastructure.Context;
 
-namespace VehicleTracking.Infrastructure.Migrations
+namespace IndexHRMS.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace VehicleTracking.Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("VehicleTracking.Entity.Entities.User", b =>
+            modelBuilder.Entity("IndexHRMS.Entity.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("VehicleTracking.Entity.Entities.VehicleGeoLocation", b =>
+            modelBuilder.Entity("IndexHRMS.Entity.Entities.VehicleGeoLocation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -126,9 +126,9 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.ToTable("VehicleGeoLocations");
                 });
 
-            modelBuilder.Entity("VehicleTracking.Entity.Entities.VehicleGeoLocation", b =>
+            modelBuilder.Entity("IndexHRMS.Entity.Entities.VehicleGeoLocation", b =>
                 {
-                    b.HasOne("VehicleTracking.Entity.Entities.User", "User")
+                    b.HasOne("IndexHRMS.Entity.Entities.User", "User")
                         .WithMany("VehicleGeoLocations")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -137,7 +137,7 @@ namespace VehicleTracking.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("VehicleTracking.Entity.Entities.User", b =>
+            modelBuilder.Entity("IndexHRMS.Entity.Entities.User", b =>
                 {
                     b.Navigation("VehicleGeoLocations");
                 });

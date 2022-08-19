@@ -7,10 +7,10 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.Interfaces;
-using VehicleTracking.Entity.Entities;
+using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Entity.Entities;
 
-namespace VehicleTracking.Infrastructure.Repositories
+namespace IndexHRMS.Infrastructure.Repositories
 {
     public class TokenRepository : ITokenRepository
     {

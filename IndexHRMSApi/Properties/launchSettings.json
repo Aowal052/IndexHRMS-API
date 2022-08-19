@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "VehicleTrackingApi": {
+    "IndexHRMSApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using VehicleTracking.Entity.Entities;
+using IndexHRMS.Entity.Entities;
 
-namespace VehicleTracking.Infrastructure.Context
+namespace IndexHRMS.Infrastructure.Context
 {
     public class DataContext : DbContext
     {

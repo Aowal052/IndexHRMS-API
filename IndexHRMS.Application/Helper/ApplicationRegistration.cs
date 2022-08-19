@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTracking.Application.Helper
+namespace IndexHRMS.Application.Helper
 {
     public static class ApplicationRegistration
     {

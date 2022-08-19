@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace VehicleTracking.Infrastructure.Migrations
+namespace IndexHRMS.Infrastructure.Migrations
 {
     public partial class InitialMigration : Migration
     {

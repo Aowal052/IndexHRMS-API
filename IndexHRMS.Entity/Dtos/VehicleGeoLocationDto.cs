@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTracking.Entity.Dtos
+namespace IndexHRMS.Entity.Dtos
 {
     public class VehicleGeoLocationDto
     {

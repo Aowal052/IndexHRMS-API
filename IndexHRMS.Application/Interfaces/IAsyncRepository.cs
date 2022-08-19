@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Entity.Entities;
+using IndexHRMS.Entity.Entities;
 
-namespace VehicleTracking.Application.Interfaces
+namespace IndexHRMS.Application.Interfaces
 {
     public interface IAsyncRepository<T> where T : BaseEntity
     {

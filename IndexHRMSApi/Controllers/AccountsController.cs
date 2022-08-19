@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Threading.Tasks;
-using VehicleTracking.Application.CommandQuery.Accounts.Command.CreateAccounts;
-using VehicleTracking.Application.CommandQuery.Accounts.Queries.Login;
+using IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts;
+using IndexHRMS.Application.CommandQuery.Accounts.Queries.Login;
 
 namespace IndexHRMS.Api.Controllers
 {

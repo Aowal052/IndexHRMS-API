@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTracking.Application.Enums
+namespace IndexHRMS.Application.Enums
 {
     public enum UserRoleEnum
     {

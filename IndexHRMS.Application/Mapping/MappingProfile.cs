@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTracking.Application.CommandQuery.Accounts.Command.CreateAccounts;
-using VehicleTracking.Entity.Dtos;
-using VehicleTracking.Entity.Entities;
+using IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts;
+using IndexHRMS.Entity.Dtos;
+using IndexHRMS.Entity.Entities;
 
-namespace VehicleTracking.Application.Mapping
+namespace IndexHRMS.Application.Mapping
 {
     public class MappingProfiles : Profile
     {
