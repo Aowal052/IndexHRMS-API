@@ -16,7 +16,6 @@ namespace IndexHRMS.Infrastructure.Context
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> VehicleGeoLocations { get; set; }
 
         //public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         //{

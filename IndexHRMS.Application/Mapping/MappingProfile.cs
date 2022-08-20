@@ -15,8 +15,7 @@ namespace IndexHRMS.Application.Mapping
         public MappingProfiles()
         {
             CreateMap<User, UserAccountCommand>().ReverseMap();
-            //CreateMap<UserRole, VehicleGeoLocationCommand>().ReverseMap();
-            CreateMap<UserRole, VehicleGeoLocationDto>().ReverseMap();
+			CreateMap<byte[], string>().ReverseMap();
         }
     }
 }

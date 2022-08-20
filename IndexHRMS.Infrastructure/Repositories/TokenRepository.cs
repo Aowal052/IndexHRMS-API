@@ -23,10 +23,10 @@ namespace IndexHRMS.Infrastructure.Repositories
         {
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.GivenName,user.FullName),
+                new Claim(JwtRegisteredClaimNames.GivenName,user.UserName),
                 new Claim(JwtRegisteredClaimNames.FamilyName,user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName,user.UserId.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName,user.Id.ToString()),
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
