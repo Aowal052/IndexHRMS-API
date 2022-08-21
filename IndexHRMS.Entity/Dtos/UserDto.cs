@@ -12,8 +12,8 @@ namespace IndexHRMS.Entity.Dtos
     public class UserDto
     {
         public string UserName { get; set; }
-        //public byte[] Password { get; set; }
-        public DateTime? LastPwdChangedDay { get; set; }
+		public byte[] Password { get; set; }
+		public DateTime? LastPwdChangedDay { get; set; }
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public byte? Image { get; set; }

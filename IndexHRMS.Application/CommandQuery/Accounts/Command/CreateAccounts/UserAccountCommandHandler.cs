@@ -33,12 +33,13 @@ namespace IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts
             using var hmac = new HMACSHA512();
             var user = _iMapper.Map<User>(request);
 
-            user.Password = hmac.ComputeHash(Encoding.UTF8.GetBytes(request.Password));
-            user.CreatedDate = DateTime.Now;
+            user.Password = new PasswordManager().Encrypt(request.Password);
+            user.AddedDate = DateTime.Now;
+            user.Id = Guid.NewGuid().ToString();
             try
             {
                 var register = await _iAccountsRepository.AddAsync(user);
-                if (register.Id > 0)
+                if (register.Id is not null)
                 {
                     message = new Message()
                     {

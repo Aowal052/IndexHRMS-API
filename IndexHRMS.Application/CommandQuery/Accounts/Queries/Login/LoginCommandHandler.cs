@@ -28,18 +28,15 @@ namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
         }
         public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var userObj = await _iAccountsRepository.GetAsync(x => x.UserName == request.UserName);
+            var userObj = await _iAccountsRepository.GetAsync(x => x.UserId == request.UserId);
             var user = userObj.FirstOrDefault();
             if (user == null)
                 throw new Exception();
-			var hmac = new HMACSHA512(user.Password);
-			var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(request.Password));
+			//var hmac = new HMACSHA512(user.Password);
+			var computedPass = new PasswordManager().Decrypt(user.Password);
 
-            for (int i = 0; i < computedHash.Length; i++)
-            {
-                if (computedHash[i] != hmac.Hash[i])
+                if (computedPass != request.Password)
                     throw new Exception();
-            }
 
             return _iTokenRepository.CreateToken(user);
         }

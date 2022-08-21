@@ -16,6 +16,7 @@ namespace IndexHRMS.Application.Mapping
         {
             CreateMap<User, UserAccountCommand>().ReverseMap();
 			CreateMap<byte[], string>().ReverseMap();
+            CreateMap<TravelOnDuty, TravelOnDutyDto>().ReverseMap();
         }
     }
 }

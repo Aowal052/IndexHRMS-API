@@ -32,8 +32,8 @@ namespace IndexHRMS.Infrastructure.Helper
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IAccountsRepository, AccountsRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
-            //services.AddScoped<IVehicleGeoLocationRepository, VehicleGeoLocationRepository>();
-            return services;
+			services.AddScoped<ITravelOnDutyRepository, TravelOnDutyRepository>();
+			return services;
         }
     }
 }
