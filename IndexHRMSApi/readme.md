@@ -1,4 +1,4 @@
-﻿#This project is developed by .NET5, EF Core 5
+﻿#This project is developed by .NET6, EF Core 5
 
 #Platform: VS 2022, SQL server 2019 Express
 
