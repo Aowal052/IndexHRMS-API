@@ -9,7 +9,7 @@ namespace IndexHRMSApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class TravelOnDutyController : ControllerBase
+	public class TravelOnDutyController : BaseController
 	{
 		private readonly IMediator _iMediator;
 		public TravelOnDutyController(IMediator mediator)

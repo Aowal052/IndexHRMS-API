@@ -18,16 +18,7 @@ namespace IndexHRMS.Infrastructure.Helper
     {
         public static IServiceCollection AddInsfrastructureService(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"),
-                sqlServerOptionsAction: sqlOption =>
-                {
-                    sqlOption.EnableRetryOnFailure(
-                        maxRetryCount: 10,
-                        maxRetryDelay: TimeSpan.FromSeconds(4),
-                        errorNumbersToAdd: null
-                        );
-                }
-                ));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString")));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddScoped<IAccountsRepository, AccountsRepository>();

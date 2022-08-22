@@ -17,16 +17,17 @@ namespace IndexHRMS.Infrastructure.Repositories
         private readonly SymmetricSecurityKey _key;
         public TokenRepository(IConfiguration config)
         {
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
+            var key = config.GetSection("Demo");
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key["TokenKey"]));
         }
         public string CreateToken(User user)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.GivenName,user.FullName),
-                new Claim(JwtRegisteredClaimNames.FamilyName,user.Email),
+                new Claim(JwtRegisteredClaimNames.Email,user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName,user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.NameId,user.Id.ToString()),
             };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
