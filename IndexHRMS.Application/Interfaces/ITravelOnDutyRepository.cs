@@ -10,5 +10,6 @@ namespace IndexHRMS.Application.Interfaces
 	public interface ITravelOnDutyRepository : IAsyncRepository<TravelOnDuty>
 	{
 		Task<IEnumerable<TravelOnDuty>> GetAllByUserAsync(string userId);
+		//Task<IEnumerable<TravelOnDutyInfo>> GetAllTravelOnDutyByUserAsync(string userId);
 	}
 }

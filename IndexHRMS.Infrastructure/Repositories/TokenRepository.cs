@@ -17,7 +17,7 @@ namespace IndexHRMS.Infrastructure.Repositories
         private readonly SymmetricSecurityKey _key;
         public TokenRepository(IConfiguration config)
         {
-            var key = config.GetSection("Demo");
+            var key = config.GetSection("HRMS");
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key["TokenKey"]));
         }
         public string CreateToken(User user)

@@ -24,6 +24,7 @@ namespace IndexHRMS.Infrastructure.Helper
             services.AddScoped<IAccountsRepository, AccountsRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
 			services.AddScoped<ITravelOnDutyRepository, TravelOnDutyRepository>();
+			services.AddScoped<ITravelOnDutyInfoRepository, TravelOnDutyInfoRepository>();
 			return services;
         }
     }

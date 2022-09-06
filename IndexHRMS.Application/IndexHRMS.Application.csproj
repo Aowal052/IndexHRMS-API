@@ -14,11 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IndexHRMS.Entity\IndexHRMS.Entity.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CommandQuery\TravelOnDuty\Command\" />
+    <ProjectReference Include="..\IndexHRMS.Entity\IndexHRMS.Domain.csproj" />
   </ItemGroup>
 
 </Project>

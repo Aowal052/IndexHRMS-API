@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexHRMSApi", "IndexHRMSAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexHRMS.Application", "IndexHRMS.Application\IndexHRMS.Application.csproj", "{749AB3DE-8698-4B42-BFCF-D55C14D268D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexHRMS.Entity", "IndexHRMS.Entity\IndexHRMS.Entity.csproj", "{D2DA7436-3945-412C-AEE5-694AA0359013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexHRMS.Domain", "IndexHRMS.Entity\IndexHRMS.Domain.csproj", "{D2DA7436-3945-412C-AEE5-694AA0359013}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexHRMS.Infrastructure", "IndexHRMS.Infrastructure\IndexHRMS.Infrastructure.csproj", "{DBEE3FF1-3E4C-47E1-93D1-14176B619822}"
 EndProject

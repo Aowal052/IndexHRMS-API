@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts;
 using IndexHRMS.Entity.Dtos;
 using IndexHRMS.Entity.Entities;
+using IndexHRMS.Application.CommandQuery.TravelOnDuty.Command.InsertTravelOnDutyInfo;
 
 namespace IndexHRMS.Application.Mapping
 {
@@ -17,6 +18,7 @@ namespace IndexHRMS.Application.Mapping
             CreateMap<User, UserAccountCommand>().ReverseMap();
 			CreateMap<byte[], string>().ReverseMap();
             CreateMap<TravelOnDuty, TravelOnDutyDto>().ReverseMap();
+            CreateMap<TravelOnDutyInfo, TravelOnDutyInfoCommand>().ReverseMap();
         }
     }
 }

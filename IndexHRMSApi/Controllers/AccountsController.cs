@@ -19,9 +19,9 @@ namespace IndexHRMS.Api.Controllers
             _iMediator = iMediator;
         }
 
-        [HttpPost("createuser")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<ActionResult<int>> CreateUser([FromBody] UserAccountCommand command) => Ok(await _iMediator.Send(command));
+        //[HttpPost("createuser")]
+        //[ProducesResponseType((int)HttpStatusCode.OK)]
+        //public async Task<ActionResult<int>> CreateUser([FromBody] UserAccountCommand command) => Ok(await _iMediator.Send(command));
 
 
         [HttpPost("login")]

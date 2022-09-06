@@ -17,6 +17,7 @@ namespace IndexHRMS.Infrastructure.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<TravelOnDuty> TravelOnDuties { get; set; }
+        public DbSet<TravelOnDutyInfo> TravelOnDutyInfo { get; set; }
 
         //public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         //{

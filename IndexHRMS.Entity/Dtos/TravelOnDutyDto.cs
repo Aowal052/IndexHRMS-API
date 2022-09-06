@@ -1,7 +1,9 @@
 ﻿using IndexHRMS.Entity.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,8 @@ namespace IndexHRMS.Entity.Dtos
         public string SupervisorId { get; set; }
         public string SupervisorName { get; set; }
         public string EmployeeCode { get; set; }
-
+        [NotMapped]
+        public IList<IFormFile> Attachments { get; set; }
         /// <summary>
         /// Record active status.
         /// </summary>

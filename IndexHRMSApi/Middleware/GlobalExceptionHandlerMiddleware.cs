@@ -30,11 +30,13 @@ namespace IndexHRMSApi.Middleware
         private async Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            var msg = "Wrong Input";
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError==500?401:(int)HttpStatusCode.InternalServerError;
             await context.Response.WriteAsync(new
             {
                 StatusCode = context.Response.StatusCode,
-                Message = exception.Message
+                Message = (int)HttpStatusCode.InternalServerError == 500 ? msg : exception.Message
+
             }.ToString());
         }
     }

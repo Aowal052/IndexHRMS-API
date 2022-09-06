@@ -18,7 +18,7 @@ namespace IndexHRMS.Application.Helper
         public static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration configuration)
         {
             const string openIdConnectAuthenticationScheme = OpenIdConnectDefaults.AuthenticationScheme;
-            var openIdConfig = configuration.GetSection("Demo");
+            var openIdConfig = configuration.GetSection("HRMS");
             var authority = $"{openIdConfig["Authority"]}";
             var tokenEndpoint = $"{authority}{openIdConfig["TokenEndpointPath"]}";
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -45,7 +45,7 @@ namespace IndexHRMS.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(string id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
@@ -58,6 +58,20 @@ namespace IndexHRMS.Infrastructure.Repositories
         public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
             return await _context.Set<T>().Where(predicate).ToListAsync();
+        }
+        public async Task<string> GetIdAsync()
+        {
+            try
+            {
+                var idList = _context.Set<T>()
+                    .Select(x => x.Id)
+                    .ToList();
+                return idList.Any() ? idList.Max(x => Convert.ToInt64(x) + 1).ToString() : "1";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
