@@ -1,4 +1,5 @@
-﻿using IndexHRMS.Entity.Entities;
+﻿using IndexHRMS.Entity.Dtos;
+using IndexHRMS.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace IndexHRMS.Application.Interfaces
 {
 	public interface ITravelOnDutyRepository : IAsyncRepository<TravelOnDuty>
 	{
-		Task<IEnumerable<TravelOnDuty>> GetAllByUserAsync(string userId);
+		Task<List<TravelOnDutyDto>> GetAllByUserAsync(string userId);
 		//Task<IEnumerable<TravelOnDutyInfo>> GetAllTravelOnDutyByUserAsync(string userId);
 	}
 }
