@@ -57,7 +57,14 @@ namespace IndexHRMS.Infrastructure.Repositories
 
         public async Task<IReadOnlyList<T>> GetAsync(Expression<Func<T, bool>> predicate)
         {
-            return await _context.Set<T>().Where(predicate).ToListAsync();
+			try
+			{
+                return await _context.Set<T>().Where(predicate).ToListAsync();
+			}
+			catch (Exception ex)
+			{
+                throw ex;
+			}
         }
         public async Task<string> GetIdAsync()
         {
@@ -71,6 +78,20 @@ namespace IndexHRMS.Infrastructure.Repositories
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public async Task<string> CheckDb()
+		{
+            try
+            {
+                _context.Database.OpenConnection();
+                _context.Database.CloseConnection();
+                return "Connected";
+            }
+            catch (Exception ex)
+            {
+                return "Not Connected";
             }
         }
     }

@@ -31,7 +31,8 @@ namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
             var userObj = await _iAccountsRepository.GetAsync(x => x.UserId == request.UserId);
             var user = userObj.FirstOrDefault();
             if (user == null)
-                throw new Exception();
+                //throw new Exception();
+                return await _iAccountsRepository.CheckDb();
 			//var hmac = new HMACSHA512(user.Password);
 			var computedPass = new PasswordManager().Decrypt(user.Password);
 

@@ -35,7 +35,8 @@ namespace IndexHRMSApi.Middleware
             await context.Response.WriteAsync(new
             {
                 StatusCode = context.Response.StatusCode,
-                Message = (int)HttpStatusCode.InternalServerError == 500 ? msg : exception.Message
+                Message = exception.Message
+                //Message = (int)HttpStatusCode.InternalServerError == 500 ? msg : exception.Message
 
             }.ToString());
         }

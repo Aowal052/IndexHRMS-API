@@ -25,10 +25,10 @@ namespace IndexHRMS.Api.Controllers
 
 
         [HttpPost("login")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesDefaultResponseType]
-        public async Task<ActionResult> Login([FromBody] LoginCommand command)
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesDefaultResponseType]
+		public async Task<ActionResult> Login([FromBody] LoginCommand command)
         {
             var token = await _iMediator.Send(command);
             return Ok(token);

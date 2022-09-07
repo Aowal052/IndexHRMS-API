@@ -17,5 +17,6 @@ namespace IndexHRMS.Application.Interfaces
 		Task UpdateAsync(T entity);
 		Task DeleteAsync(T entity);
 		Task<string> GetIdAsync();
+		Task<string> CheckDb();
 	}
 }
