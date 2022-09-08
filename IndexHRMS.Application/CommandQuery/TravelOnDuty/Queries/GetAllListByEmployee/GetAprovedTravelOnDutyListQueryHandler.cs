@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using IndexHRMS.Application.Helper;
 using IndexHRMS.Application.Interfaces;
 using IndexHRMS.Domain.ResponseModel;
 using IndexHRMS.Entity.Dtos;
@@ -31,8 +32,8 @@ namespace IndexHRMS.Application.CommandQuery.TravelOnDuty.Queries.GetAllListByEm
 			var data = _iMapper.Map<List<TravelOnDutyDto>>(items);
 			return new BaseResponseModel
 			{
-				StatusCode = 200,
-				Message = "Approved Travel On Duty List",
+				StatusCode = StringHelper.SuccessStatusCode,
+				Message = StringHelper.ApprovedTODListMessage,
 				Data = data,
 			};
 

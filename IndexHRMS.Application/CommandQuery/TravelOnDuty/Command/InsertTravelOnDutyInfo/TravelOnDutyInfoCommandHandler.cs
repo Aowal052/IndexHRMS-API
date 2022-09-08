@@ -105,7 +105,7 @@ namespace IndexHRMS.Application.CommandQuery.TravelOnDuty.Command.InsertTravelOn
 					{
 						Data = insertedData,
 						StatusCode = Convert.ToInt32(HttpStatusCode.OK),
-						StatusMessage = "Data saved successfully"
+						StatusMessage = StringHelper.InsertTODInfoMessage
 					};
 				}
 				return message;

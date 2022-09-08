@@ -46,8 +46,8 @@ namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
             var token = _iTokenRepository.CreateToken(user);
             return new LoginResponseModel
             {
-                StatusCode = 200,
-                Message = "You Have Successfully Logged In",
+                StatusCode = StringHelper.SuccessStatusCode,
+                Message = StringHelper.LogedInSuccessMessage,
                 Token = token,
                 UserInfo = data,
             };
