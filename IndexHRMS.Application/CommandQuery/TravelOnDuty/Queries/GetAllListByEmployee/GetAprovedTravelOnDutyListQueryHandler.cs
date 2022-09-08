@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Domain.ResponseModel;
 using IndexHRMS.Entity.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace IndexHRMS.Application.CommandQuery.TravelOnDuty.Queries.GetAllListByEmployee
 {
-	public class GetAprovedTravelOnDutyListQueryHandler : IRequestHandler<GetAprovedTravelOnDutyListQuery, List<TravelOnDutyDto>>
+	public class GetAprovedTravelOnDutyListQueryHandler : IRequestHandler<GetAprovedTravelOnDutyListQuery, BaseResponseModel>
 	{
 		private readonly IMapper _iMapper;
 		private readonly ITravelOnDutyRepository _iTravelOnDutyRepository;
@@ -24,10 +25,17 @@ namespace IndexHRMS.Application.CommandQuery.TravelOnDuty.Queries.GetAllListByEm
 			_iHttpContextAccessor = iHttpContextAccessor;
 		}
 
-		public async Task<List<TravelOnDutyDto>> Handle(GetAprovedTravelOnDutyListQuery request, CancellationToken cancellationToken)
+		public async Task<BaseResponseModel> Handle(GetAprovedTravelOnDutyListQuery request, CancellationToken cancellationToken)
 		{
 			var items = await _iTravelOnDutyRepository.GetAllByUserAsync(request.userId);
-			return _iMapper.Map<List<TravelOnDutyDto>>(items);
+			var data = _iMapper.Map<List<TravelOnDutyDto>>(items);
+			return new BaseResponseModel
+			{
+				StatusCode = 200,
+				Message = "Approved Travel On Duty List",
+				Data = data,
+			};
+
 		}
 	}
 }

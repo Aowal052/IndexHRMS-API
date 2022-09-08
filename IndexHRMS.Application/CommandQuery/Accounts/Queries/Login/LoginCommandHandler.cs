@@ -11,10 +11,14 @@ using System.Threading.Tasks;
 using IndexHRMS.Application.CommandQuery.Accounts.Command.CreateAccounts;
 using IndexHRMS.Application.Helper;
 using IndexHRMS.Application.Interfaces;
+using IndexHRMS.Domain.ResponseModel;
+using IndexHRMS.Entity.Dtos;
+using System.Reflection;
+using IndexHRMS.Entity.Entities;
 
 namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
 {
-    public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponseModel>
     {
         private readonly IMapper _iMapper;
         private readonly IAccountsRepository _iAccountsRepository;
@@ -26,20 +30,27 @@ namespace IndexHRMS.Application.CommandQuery.Accounts.Queries.Login
             _iAccountsRepository = iAccountsRepository;
             _iTokenRepository = iTokenRepository;
         }
-        public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
+        public async Task<LoginResponseModel> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             var userObj = await _iAccountsRepository.GetAsync(x => x.UserId == request.UserId);
             var user = userObj.FirstOrDefault();
+            var data = _iMapper.Map<UserDto>(user);
             if (user == null)
-                //throw new Exception();
-                return await _iAccountsRepository.CheckDb();
-			//var hmac = new HMACSHA512(user.Password);
+                throw new Exception();
+                //return await _iAccountsRepository.CheckDb();
 			var computedPass = new PasswordManager().Decrypt(user.Password);
 
                 if (computedPass != request.Password)
                     throw new Exception();
 
-            return _iTokenRepository.CreateToken(user);
+            var token = _iTokenRepository.CreateToken(user);
+            return new LoginResponseModel
+            {
+                StatusCode = 200,
+                Message = "You Have Successfully Logged In",
+                Token = token,
+                UserInfo = data,
+            };
         }
     }
 }
